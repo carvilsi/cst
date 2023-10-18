@@ -37,7 +37,6 @@ static void give_me_a_string_()
         // assert a string 
         cst_s(give_me_a_string(), "should give me", "a string");
 
-
         // goingt to fail
         cst_s(give_me_a_string(), "should give me", "foobar");
 
@@ -67,6 +66,7 @@ static void raw_assert()
 
         mod_var_value("foobar");
         cst_a("the variable should be 'foobar'", strcmp(variable, "foobar") == 0);
+
         // this will fail
         cst_a("the variable should be 'foobar'", strcmp(variable, "foobarlol") == 0);
 
