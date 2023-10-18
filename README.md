@@ -1,13 +1,13 @@
 # cst
 
 <div align="center">
-    C Simple Test.
+C Simple Test.
 
-    There are lot of c test frameworks, but this is mine.
-</div>
+There are lot of c test frameworks, but this is mine.
 
 1. [Introduction](#introduction)
 2. [Usage](#usage)
+</div>
 
 ## Introduction
 
