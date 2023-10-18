@@ -4,10 +4,14 @@
 C Simple Test.
 
 There are lot of c test frameworks, but this is mine.
+</div>
+
+---
 
 1. [Introduction](#introduction)
-2. [Usage](#usage)
-</div>
+2. [Basic Syntax](#basic-syntax)
+3. [Usage](#usage)
+
 
 ## Introduction
 
@@ -32,6 +36,10 @@ Just to ilustrate the situation consider the next sequence:
 So for first time (dealing with c) I was facing step 7 and I decided to add tests. Then; do a search on *StackOverflow*; try lot of things.
 Most of the alternatives that I found required to install dependecies or was so much complicated compared with my current needs.
 Suddenly I found this brilliant answer at StackOverflow site [Minunit](https://stackoverflow.com/a/65962/2191338), answer that I upvoted (of course) that leads to [JTN002 - MinUnit -- a minimal unit testing framework for C](https://jera.com/techinfo/jtns/jtn002). This whole test thingy it's based on this.
+
+## Basic Syntax<a name="basic-syntax"/>
+
+this will be a resume about the basic syntax
 
 ## Usage
 
