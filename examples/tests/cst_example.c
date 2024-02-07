@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <string.h>
 
 // include the cst header file

@@ -1,7 +1,4 @@
-<!--# cst-->
-<h1>
-cst
-</h1>
+# cst
 
 <div align="center">
 C Simple Test.
@@ -13,12 +10,12 @@ There are lot of c test frameworks, but this is mine.
 
 1. [Introduction](#introduction)
 2. [Basic Syntax](#basic-syntax)
-3. [Usage](#usage)
-
+3. [Output Example](#output-example)
+4. [Usage](#usage)
 
 ## Introduction
 
-Here we are trying to keep the c tests approach **simple** as possible; also trying to add some beauty to it like adding colors etc. Ok, there are some developers with a very strong negative opinion about colors at the stdout. I love colors, and most for test and logs outputs though. 
+Here we are trying to keep the c tests approach **simple** as possible; also trying to add some beauty to it like adding colors etc. Ok, there are some developers with a very strong negative opinion about colors around the terminal. I love colors, and most for test and logs outputs though. 
 
 * Why re-inventing the wheel here writting another test framework for c?
 
@@ -44,7 +41,28 @@ Suddenly I found this brilliant answer at StackOverflow site [Minunit](https://s
 
 this will be a resume about the basic syntax
 
+## Output example<a name"output-example"/>
+
+<p align="center">
+    <img src="https://github.com/carvilsi/cst/raw/main/img/test-output.png" alt="test-output">
+</p>
+
 ## Usage
 
-This will be the usage block.
+Under the **examples** directory you'll find the whole setup and file structure and basic usage.
+
+The structure for testing could be something like this:
+
+```
+examples/
+├── README.md
+├── src
+│   ├── dep.c
+│   ├── dep.h
+│   └── main.c
+└── tests
+    ├── cst_example.c
+    └── Makefile
+```
+
 
