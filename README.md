@@ -1,6 +1,6 @@
 <div align="center">
 
-:wheel: Reinventing The Wheel group presents :wheel:
+:ferris_wheel: Reinventing The Wheel group presents :ferris_wheel:
 
 C Simple Test
 
@@ -29,8 +29,54 @@ For a more elaborated, but still non-sense, answer check [Long Answer](#long-ans
 
 ## Basic Syntax<a name="basic-syntax"/>
 
+### integer and string assertion
 
+For an integer use **cst_i** for a string **cst_s** or the not equal for both **cst_i_ne** and **cst_s_ne**.
 
+These 4 functions expects 3 arguments:
+
+1. function_to_test()
+2. "assertion text"
+3. expected_value
+
+* assert an integer
+
+```c
+        //             |-> the function to test or actual value 
+        //             |                                |-> text for the assertion
+        //             |                                |                                 |-> the expected value
+        //             |                                |                                 |    
+        cst_i(add_numbers(2, 2), "should do an addition of two numbers 2 + 2 and return", 4); 
+                                 
+        // a value different than
+        cst_i_ne(add_numbers(1, 1), "should do an addition of two numbers 1 + 2 and return a different value than", 3);
+```
+
+* assert a string
+
+```c
+        // assert a string 
+        cst_s(give_me_a_string(), "should give me", "a string");
+
+        // string not equal
+        cst_s_ne(give_me_a_string(), "should NOT give me", "foobar");
+```
+
+### raw or generic assert
+
+Use the **cst_a** function that expects two arguments:
+
+1. "text for the assertion"
+2. a condition
+
+* raw assert
+
+```c
+        //                      |-> text for the assertion
+        //                      |                                          |-> the condition to test
+        //                      |                                          |
+        cst_a("the adition of 2 + 5 should retrieve 7", add_numbers(2, 5) == 7);
+```
 
 ## Output example<a name"output-example"/>
 
@@ -40,12 +86,14 @@ For a more elaborated, but still non-sense, answer check [Long Answer](#long-ans
 
 ## Usage
 
+On your test file, include **cst.h** and the header files from your code that has the functions that you want to test. At the test file, call all the tests and then call the **cst_results()** function.
+
 Under the **examples** directory you'll find the whole setup and file structure and basic usage.
 
 The structure for testing could be something like this:
 
 ```
-examples/
+my_code/
 ├── README.md
 ├── src
 │   ├── dep.c
@@ -53,9 +101,25 @@ examples/
 │   └── main.c
 └── tests
     ├── cst_example.c
+    ├── cst.c
+    ├── cst.h
     └── Makefile
 ```
 
+Put **cst.c** and **cst.h** somewhere (on test folder is fine, I did not in order to not duplicate files) and point to the **cst.c** on your **Makefile** and the c files from your tests. Something like:
+
+`$(CC) $(CCFLAGS) -o $@ $(SRC) ./../../cst.c cst_example.c $(LIBS)`
+
+ Remember to not include your **main.c** file from your source code. This would be usefull:
+
+`SRC := $(shell find ./../src/ -type f -name '*.c' ! -name 'main.c')` 
+
+**tip:** reusing the **Makefile** at *examples/tests/* and modifying the **cst* files location and tests c files should do the work.
+
+Then go to the *tests* fodler and run:
+
+`$ make clean && make`
+ 
 ## Long Answer<a name="long-answer"/>
 
 The **More long answer:** For a personal c project, I face the Eternal Return or Eternal Recurrence of the leak of test.
