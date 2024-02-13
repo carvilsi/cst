@@ -138,5 +138,9 @@ So for first time (dealing with c) I was facing step 7 and I decided to add test
 Most of the alternatives that I found required to install dependecies or was so much complicated compared with my current needs.
 Suddenly I found this brilliant answer at StackOverflow site [Minunit](https://stackoverflow.com/a/65962/2191338), answer that I upvoted (of course) that leads to [JTN002 - MinUnit -- a minimal unit testing framework for C](https://jera.com/techinfo/jtns/jtn002). This whole test thingy it's based on this.
 
+---
 
+Feedback from usage and contributions are very welcome.
+
+Also if you like it, please leave a :star: I would appreciate it ;)
 
