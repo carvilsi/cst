@@ -44,9 +44,9 @@ These 4 functions expects 3 arguments:
 ```c
 //             |-> the function to test or actual value 
 //             |                                |-> text for the assertion
-//             |                                |                              |-> the expected value
-//             |                                |                              |    
-cst_i(add_numbers(2, 2), "should do addition of two numbers 2 + 2 and return", 4); 
+//             |                                |                   |-> the expected value
+//             |                                |                   |    
+cst_i(add_numbers(2, 2), "should do addition for 2 + 2 and return", 4); 
                          
 // a value different than
 cst_i_ne(add_numbers(1, 1), "should do addition for 1 + 2 and return a different value than", 3);
@@ -78,7 +78,7 @@ Use the **cst_a** function that expects two arguments:
 cst_a("the adition of 2 + 5 should retrieve 7", add_numbers(2, 5) == 7);
 ```
 
-## Output example<a name"output-example"/>
+## Output example<a name="output-example"/>
 
 <p align="center">
     <img src="https://github.com/carvilsi/cst/raw/main/img/test-output.png" alt="test-output">
