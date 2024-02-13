@@ -1,6 +1,6 @@
 <div align="center">
 
-:ferris_wheel: Reinventing The Wheel group presents :ferris_wheel:
+:ferris_wheel: Reinventing The Wheel Group presents :ferris_wheel:
 
 C Simple Test
 
@@ -42,24 +42,24 @@ These 4 functions expects 3 arguments:
 * assert an integer
 
 ```c
-        //             |-> the function to test or actual value 
-        //             |                                |-> text for the assertion
-        //             |                                |                                 |-> the expected value
-        //             |                                |                                 |    
-        cst_i(add_numbers(2, 2), "should do an addition of two numbers 2 + 2 and return", 4); 
-                                 
-        // a value different than
-        cst_i_ne(add_numbers(1, 1), "should do an addition of two numbers 1 + 2 and return a different value than", 3);
+//             |-> the function to test or actual value 
+//             |                                |-> text for the assertion
+//             |                                |                              |-> the expected value
+//             |                                |                              |    
+cst_i(add_numbers(2, 2), "should do addition of two numbers 2 + 2 and return", 4); 
+                         
+// a value different than
+cst_i_ne(add_numbers(1, 1), "should do addition for 1 + 2 and return a different value than", 3);
 ```
 
 * assert a string
 
 ```c
-        // assert a string 
-        cst_s(give_me_a_string(), "should give me", "a string");
+// assert a string 
+cst_s(give_me_a_string(), "should give me", "a string");
 
-        // string not equal
-        cst_s_ne(give_me_a_string(), "should NOT give me", "foobar");
+// string not equal
+cst_s_ne(give_me_a_string(), "should NOT give me", "foobar");
 ```
 
 ### raw or generic assert
@@ -72,10 +72,10 @@ Use the **cst_a** function that expects two arguments:
 * raw assert
 
 ```c
-        //                      |-> text for the assertion
-        //                      |                                          |-> the condition to test
-        //                      |                                          |
-        cst_a("the adition of 2 + 5 should retrieve 7", add_numbers(2, 5) == 7);
+//                      |-> text for the assertion
+//                      |                                          |-> the condition to test
+//                      |                                          |
+cst_a("the adition of 2 + 5 should retrieve 7", add_numbers(2, 5) == 7);
 ```
 
 ## Output example<a name"output-example"/>
@@ -114,7 +114,7 @@ Put **cst.c** and **cst.h** somewhere (on test folder is fine, I did not in orde
 
 `SRC := $(shell find ./../src/ -type f -name '*.c' ! -name 'main.c')` 
 
-**tip:** reusing the **Makefile** at *examples/tests/* and modifying the **cst* files location and tests c files should do the work.
+**tip:** reusing the **Makefile** at *examples/tests/* and modifying the **cst** files location and tests c files should do the work.
 
 Then go to the *tests* fodler and run:
 
