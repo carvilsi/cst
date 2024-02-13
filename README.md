@@ -76,6 +76,10 @@ Use the **cst_a** function that expects two arguments:
 //                      |                                          |-> the condition to test
 //                      |                                          |
 cst_a("the adition of 2 + 5 should retrieve 7", add_numbers(2, 5) == 7);
+
+cst_a("the variable should be 'foobar'", strcmp(variable, "foobar") == 0);
+        
+cst_a("the variable should not be NULL", variable != NULL);
 ```
 
 ## Output example<a name="output-example"/>
