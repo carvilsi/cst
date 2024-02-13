@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <string.h>
 
 // include the cst header file
@@ -8,7 +7,6 @@
 #include "./../src/dep.h"
 
 // the tests
-
 static void add_numbers_()
 {
         // here you do the assert in this case for a integer
@@ -36,7 +34,6 @@ static void give_me_a_string_()
 {
         // assert a string 
         cst_s(give_me_a_string(), "should give me", "a string");
-
 
         // goingt to fail
         cst_s(give_me_a_string(), "should give me", "foobar");
@@ -67,10 +64,16 @@ static void raw_assert()
 
         mod_var_value("foobar");
         cst_a("the variable should be 'foobar'", strcmp(variable, "foobar") == 0);
+        
         // this will fail
         cst_a("the variable should be 'foobar'", strcmp(variable, "foobarlol") == 0);
 
+        // NULL values
+        cst_a("the variable should not be NULL", variable != NULL);
+        mod_var_value(NULL);
+        cst_a("the variable should be NULL", variable == NULL);
 }
+
 // bundle all your tests could be a good idea
 static void all_the_tests()
 {
