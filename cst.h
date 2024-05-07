@@ -26,6 +26,8 @@
 
 */
 
+#define VERSION "0.1.0"
+
 #define RED "\x1B[31m"
 #define GRN "\x1B[32m"
 #define YEL "\x1B[33m"
@@ -42,8 +44,6 @@
 #define cst_assert(f, m, t, r, e, y) if (nbr_tst == 0) { printf("\n"); } nbr_tst++; if (fncssrt == NULL || strcmp(fncssrt, f) != 0) { printf("\n"); fncssrt = f; printf(BLD "%d- " RST WHT "%s\n" RST, nbr_shld, f); } if (t) { printf(WHT "\t%d- " GRN  "%s " RST BLD "%s: %" #y RST, nbr_tst, CHK, m, e); nbr_ptst++; } else { printf(WHT "\t%d- " RED "%s " "%s: %" #y RST GRY "\n\t\t actual: " GRN "%" #y GRY " - expected: " RED "%" #y RST, nbr_tst, CRS, m, e, r, e); nbr_ftst++; } printf("\n");
 
 #define cst_true_assert(f, m, t) if (nbr_tst == 0) { printf("\n"); } nbr_tst++; if (fncssrt == NULL || strcmp(fncssrt, f) != 0) { printf("\n"); fncssrt = f; printf(BLD "%d- " RST WHT "%s\n" RST, nbr_shld, f); } if (t) { printf(WHT "\t%d- " GRN "%s " RST BLD "%s" RST, nbr_tst, CHK, m); nbr_ptst++; } else { printf(WHT "\t%d- " RED "%s " "%s " RST, nbr_tst, CRS, m); nbr_ftst++; } printf("\n");
-
-
 
 #define cst_i(a, b, c) cst_i_(a, b, c, __func__, 1)
 #define cst_i_ne(a, b, c) cst_i_(a, b, c, __func__, 0)
