@@ -85,7 +85,7 @@ cst_a("the variable should not be NULL", variable != NULL);
 ## Output example<a name="output-example"/>
 
 <p align="center">
-    <img src="https://github.com/carvilsi/cst/raw/main/img/test-output.png" alt="test-output">
+    <img src=".github/images/test-output.png" alt="test-output">
 </p>
 
 ## Usage
