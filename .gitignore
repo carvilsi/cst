@@ -2,3 +2,5 @@ tags
 .*.swp
 a.out
 examples/tests/test
+cst_*
+sha256sum.txt
